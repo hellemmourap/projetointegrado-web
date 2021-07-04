@@ -1,6 +1,14 @@
+    var senha = document.getElementById('password');
+    if(senha.type == 'password'){
+        senha.type = 'text';
+    }
+    else{
+        senha.type = 'password';
+    }
+
     var email = document.getElementById('email');
-        var password = document.getElementById('passoword');
-        
+    var password = document.getElementById('passoword');
+
     email.addEventListener('focus',()=>{
         email.style.borderColor = "#4A5F6A"
     });
