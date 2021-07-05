@@ -2,7 +2,7 @@ function validarInputs(event) {
     event.preventDefault();
     var userName = document.getElementById('username').value;
     var password = document.getElementById('password').value;
-    var passConfirmation = document.getElementById('passConfirmation');
+    var passConfirmation = document.getElementById('passConfirmation').value;
 
     if (userName.length >= 6) {
         if (password.length >= 8) {
