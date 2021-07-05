@@ -1,13 +1,13 @@
 *{margin: 20px;padding: 0;box-sizing: border-box;}
 
 body{
-    background-color: #FAFAFA;
+    background-color: #FFFFFF;
 }
 .color{
     background-color:	#FFFFFF;
     max-width: 500px;
     width: 70%;
-    padding: 20px;
+    padding: 50px;
     position:absolute;
     left: 50%;
     top:50%;
