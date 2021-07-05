@@ -11,14 +11,12 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="/js/index.js"></script>
-
 </head>
 
 <body>
-    <form class="color">
+    <form class="color" onsubmit="verificar(event)">
         <h1>Login</h1>
-        <input type="text" name="email" placeholder="Email" required />
+        <input type="text" name="email" id="email" placeholder="Email" required />
 
         <div class="pass-change">
             <input type="password" name="password" id="password" placeholder="Senha" required />
@@ -30,8 +28,8 @@
         <hr>
         <a href="#"> Esqueceu sua senha? </a>
         <a href="./html/cadastrar.html"> Cadastre-se </a>
-
     </form>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
