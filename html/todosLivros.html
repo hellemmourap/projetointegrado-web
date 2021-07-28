@@ -1,86 +1,73 @@
 <!DOCTYPE html>
 <html>
-    <div class="product-container">
-    <div class="prev" style="visibility: hidden;">
-        <img src="https://static.vigiadepreco.com.br/6b/655/56cf/2b8b1/548985/ic-navigate-next.svg">
-    </div>
-    <div class="product-list">
-        <a href="livro1.html" 
+    <script src="https://unpkg.com/vue@next" ></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<div id="lista">
+    <div v-for="livro in livros">
+        
+
+        <a :href="livro.link"
         target="_blank" 
-        title="Livro - Corte de espinhos e rosas (Vol. 1) Capa comum – Edição padrão, 9 outubro 2015" 
+        :title = "livro.subtitulo"
+
         style="min-width: 156px; max-width: 156px;">
         <div class="product-item">
             <div class="card">
                 <div class="image">
-                    <img src="https://m.media-amazon.com/images/P/B01ACFIWT8.01._SCLZZZZZZZ_SX500_.jpg" 
-                    alt="Livro - Corte de espinhos e rosas (Vol. 1) Capa comum – Edição padrão, 9 outubro 2015">
+                    <img :src="livro.img" 
+                    alt={{livro.titulo}}>
                 </div>
-                <div class="title">Corte de espinhos e rosas (Vol. 1)</div>
-                <div class="store">Doador(a): Sabrina Silva</div><br>
-            </div>
-        </div>
-        </a>
-        <a href="livro2.html" 
-        target="_blank" 
-        title="Livro - Trono de vidro (Vol. 1) Capa comum – 6 agosto 2013" 
-        style="min-width: 156px; max-width: 156px;">
-        <div class="product-item">
-            <div class="card">
-                <div class="image">
-                    <img src="https://images-na.ssl-images-amazon.com/images/I/41rtnHT5SsL._SX335_BO1,204,203,200_.jpg" 
-                    alt="Livro - Trono de vidro (Vol. 1) Capa comum – 6 agosto 2013">
-                </div>
-                <div class="title">Livro - Trono de vidro (Vol. 1)</div>
-                <div class="store">Doador(a): Karoline Ferreira</div><br>
-            </div>
-        </div>
-        </a>
-        <a href="livro3.html" 
-        target="_blank" 
-        title="Livro - O príncipe cruel (Vol. 1 O Povo do Ar) Capa comum – Edição padrão, 10 setembro 2018" 
-        style="min-width: 156px; max-width: 156px;">
-        <div class="product-item">
-            <div class="card">
-                <div class="image">
-                    <img src="https://images-na.ssl-images-amazon.com/images/I/51BSHmTVwsS._SX335_BO1,204,203,200_.jpg" 
-                    alt="Livro - O príncipe cruel (Vol. 1 O Povo do Ar) Capa comum – Edição padrão, 10 setembro 2018">
-                </div>
-                <div class="title">Livro - O príncipe cruel (Vol. 1)</div>
-                <div class="store">Doador(a): Gabriela Costa</div><br>
-            </div>
-        </div>
-        </a>
-        </a>
-        <a href="livro4.html" 
-        target="_blank" 
-        title="Livro - Dragões de Éter: Caçadores de Bruxas - Volume 1 Capa comum – 13 novembro 2020" 
-        style="min-width: 156px; max-width: 156px;">
-        <div class="product-item">
-            <div class="card">
-                <div class="image">
-                    <img src="https://images-na.ssl-images-amazon.com/images/I/51WWhKWyBmL._SX339_BO1,204,203,200_.jpg" 
-                    alt="Livro - Dragões de Éter: Caçadores de Bruxas - Volume 1 Capa comum – 13 novembro 2020">
-                </div>
-                <div class="title">Livro - Dragões de Éter: Caçadores de Bruxas (Vol. 1)</div>
-                <div class="store">Doador(a): Helena Oliveira</div><br>
-            </div>
-        </div>
-        </a>
-        <a href="livro5.html" 
-        target="_blank" 
-        title="Livro - Os noivos do inverno: 1 Capa comum – 6 julho 2018" 
-        style="min-width: 156px; max-width: 156px;">
-        <div class="product-item">
-            <div class="card">
-                <div class="image">
-                    <img src="https://images-na.ssl-images-amazon.com/images/I/51LY3mZ6QhL._SX325_BO1,204,203,200_.jpg" 
-                    alt="Livro - Os noivos do inverno: 1 Capa comum – 6 julho 2018">
-                </div>
-                <div class="title">Livro - Os noivos do inverno (Vol. 1)</div>
-                <div class="store">Doador(a): Larissa Soares</div><br>
+                <div class="title">{{livro.titulo}}</div>
+                <div class="store">{{livro.doador}}</div><br>
             </div>
         </div>
         </a>
     </div>
 </div>
+
+<script>
+    var lista = new Vue({
+        el: '#lista',
+        data: {
+            livros:[
+                {
+                    img:"https://m.media-amazon.com/images/P/B01ACFIWT8.01._SCLZZZZZZZ_SX500_.jpg",
+                    titulo:"Corte de espinhos e rosas (Vol. 1)",
+                    link: "livro1.html",
+                    subtitulo: "Capa comum – Edição padrão, 9 outubro 2015",
+                    doador: "Doador(a): Sabrina Silva"
+                },
+                {
+                    img:"https://images-na.ssl-images-amazon.com/images/I/41rtnHT5SsL._SX335_BO1,204,203,200_.jpg",
+                    titulo:"Trono de vidro (Vol. 1)",
+                    link: "livro2.html",
+                    subtitulo: "Capa comum – 6 agosto 2013",
+                    doador: "Doador(a): Karoline Ferreira"
+                },
+                {
+                    img:"https://images-na.ssl-images-amazon.com/images/I/51BSHmTVwsS._SX335_BO1,204,203,200_.jpg",
+                    titulo:"O príncipe cruel (Vol. 1)",
+                    link: "livro3.html",
+                    subtitulo: "Capa comum – Edição padrão, 10 setembro 2018",
+                    doador: "Doador(a): Gabriela Costa"
+                },
+                {
+                    img:"https://images-na.ssl-images-amazon.com/images/I/51WWhKWyBmL._SX339_BO1,204,203,200_.jpg",
+                    titulo:"Dragões de Éter: Caçadores de Bruxas (Vol. 1)",
+                    link: "livro4.html",
+                    subtitulo: "Capa comum – 13 novembro 2020",
+                    doador: "Doador(a): Helena Oliveira"
+                },
+                {
+                    img:"https://images-na.ssl-images-amazon.com/images/I/51LY3mZ6QhL._SX325_BO1,204,203,200_.jpg",
+                    titulo:"Os noivos do inverno (Vol. 1)",
+                    link: "livro5.html",
+                    subtitulo: "Capa comum – 6 julho 2018",
+                    doador: "Doador(a): Larissa Soares"
+                }
+            ]
+        }
+    })
+</script>
+
 </html>
